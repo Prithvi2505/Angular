@@ -1,0 +1,17 @@
+
+<h1>Todo List</h1>
+<div class="container">
+  <add-todo-form (addTodo)="todo.push($event)"></add-todo-form>
+  <select class="form-select" aria-label="Default select example" [(ngModel)] = "filterList">
+    <option value="1">All</option>
+    <option value="2">Remaining Task</option>
+    <option value="3">Done Task</option>
+  </select>
+  <todolist [Todo] = "visibleList"></todolist>
+</div>
+
+<div>
+  <app-host></app-host>
+</div>
+
+

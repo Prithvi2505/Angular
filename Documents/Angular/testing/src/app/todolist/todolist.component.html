@@ -1,0 +1,15 @@
+<div *ngIf="Todo.length == 0; else showlist">
+    There are no task here
+  </div>
+  <ng-template #showlist>
+   <ul>
+    <li *ngFor="let item of Todo">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="checkDefault" [checked] = "item.iscompleted" (click)="toggle(item)">
+        <label class="form-check-label" for="checkDefault">
+          {{ item.text }}
+        </label>
+      </div>
+    </li>
+   </ul>
+  </ng-template>
